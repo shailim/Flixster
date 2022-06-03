@@ -15,6 +15,7 @@ public class Movie {
     public String title;
     public String overview;
     public Double vote_average;
+    public Integer vote_count;
 
     public Movie() { }
 
@@ -24,6 +25,7 @@ public class Movie {
         title = jsonObject.getString("title");
         overview = jsonObject.getString("overview");
         vote_average = jsonObject.getDouble("vote_average");
+        vote_count = jsonObject.getInt("vote_count");
     }
 
     public static List<Movie> fromJsonArray(JSONArray movieJsonArray) throws JSONException {
@@ -52,5 +54,9 @@ public class Movie {
 
     public Double getVote_average() {
         return vote_average;
+    }
+
+    public Integer getVote_count() {
+        return vote_count;
     }
 }
